@@ -35,7 +35,7 @@ const MiddleBodySection = () => {
   
         </div>
         <div>
-                <h4>How do we prepare our kids for the better future ?</h4>
+                <h4 style={{textAlign:"center"}}>How do we prepare our kids for the better future ?</h4>
                 <hr/>
                 <p className='fs-5' style={{textAlign:"center"}}>Here is a better way to build the mindsets of our kids to lead businesses of the future. This course has been carefully designed to enrich students with the skills needed for them to thrive as creative thinkers, great leaders, public speakers and leading life like “Entrepreneurs”.
                     

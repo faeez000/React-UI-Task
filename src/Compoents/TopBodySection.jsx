@@ -1,7 +1,6 @@
 import { useState } from 'react';
+import  {Link} from 'react-router-dom'
 import Carousel from 'react-bootstrap/Carousel';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Button from 'react-bootstrap/Button';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -28,13 +27,13 @@ function TopBodySection() {
   return (
     <div style={{backgroundImage:`url(${imageurl})`, backgroundSize: "100%", }}>
     <Container >
-      <Row>
+      <Row xs={1} sm={1} md={1} lg={2}>
         <Col>
         <div>
-            <h2 className='fs-3'>Online Education Courses</h2>
-            <p className='fs-4'>''For Everyone''</p>
-            <div style={{marginLeft:"15%"}}>
-                <Card className='shadow p-3 mb-5 bg-body-tertiary rounded' border="light" style={{ width: '26rem' }}>
+            <h2 className='fs-3'style={{textAlign:"center"}}>Online Education Courses</h2>
+            <p className='fs-4 ' style={{textAlign:"center"}}>''For Everyone''</p>
+            <div>
+                <Card className='shadow p-3 mb-5 bg-body-tertiary rounded' border="light" style={{ width: '100%' }}>
                     <Card.Header><h3>Book your free class now</h3></Card.Header>
                     <Card.Body>
                     <Card.Title>
@@ -54,11 +53,12 @@ function TopBodySection() {
                         <Card.Text>
                             Select your child's grade/class in school
                         </Card.Text>
-                            <Row>
-                                <ButtonGroup>
+                            <Row xs={2} sm={2} md={6} lg={6}>
+                                
                                     {buttonFirstRow.map((button, idx) => (
+                                    <Col key={idx}>
                                     <ToggleButton
-                                        key={idx}
+                                        style={{marginTop:"2%"}}
                                         id={`radio-${idx}`}
                                         type="radio"
                                         variant="outline-warning"
@@ -69,13 +69,14 @@ function TopBodySection() {
                                     >
                                         {button.name}
                                     </ToggleButton>
+                                    </Col>
                                     ))}
-                                </ButtonGroup>
+                                
                             </Row>
                         <div style={{marginTop:"5%"}}>
-                        <Button variant="primary" size="lg">
+                        <Link className="btn btn-primary" to='/registration' target='_blank' variant="primary" size="lg">
                             Schedule a Free Class
-                        </Button>     
+                        </Link>     
                         </div>
                     </Card.Body>
                 </Card>
@@ -83,7 +84,7 @@ function TopBodySection() {
         </div>
         </Col>
         <Col>
-            <div style={{marginLeft:"10%",marginTop:"5%"}} >
+            <div style={{marginLeft:"",marginTop:"5%"}} >
                 <img 
                 className='shadow p-3 mb-5 bg-body-tertiary rounded'
                 style={{ width: '20rem', height:"24rem" }}
@@ -95,7 +96,7 @@ function TopBodySection() {
       </Row>
     </Container>
     <Container>
-      <Row>
+      <Row xs={1} md={1} lg={2}>
         <Col>
             <div>
             <Carousel fade>
@@ -113,7 +114,7 @@ function TopBodySection() {
             </div>
         </Col>
         <Col>
-            <div>
+            <div style={{marginTop:"3%"}}>
             <Tabs
                 defaultActiveKey="Overview"
                 id="uncontrolled-tab-example"

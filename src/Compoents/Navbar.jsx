@@ -1,9 +1,9 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from 'react-router-dom';
 
 function TopNavbar() {
   return (
@@ -53,8 +53,8 @@ function TopNavbar() {
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link href="#action1"><i className="bi bi-telephone-fill"></i> Contact Us</Nav.Link>
-                  <Button variant="outline-warning">Join Class</Button>
-                  <Button variant="outline-warning">Book a free trial</Button>
+                  <Link  className='btn btn-outline-warning'to='/registration' target='_blank' variant="outline-warning">Join Class</Link>
+                  <Link className='btn btn-outline-warning' to='/registration' target='_blank' variant="outline-warning">Book a free trial</Link>
                 </Nav>
                 
               </Offcanvas.Body>

@@ -14,10 +14,10 @@ function Cards(props) {
     ?
 
     <div>
-        <Row xs={1} sm={1} md={3} className="g-4">
+        <Row xs={1} sm={1} md={2} className="g-4">
         {props.services.map((service, pos) => (
             <Col key={pos}>
-            <Card className="shadow p-3 mb-5 bg-body-tertiary rounded" style={{width:"320px", height:"360px", marginLeft:"5%"}}>
+            <Card className="shadow p-3 mb-5 bg-body-tertiary rounded" style={{width:"300px", height:"400px", marginLeft:"5%"}}>
                 <Card.Img variant="top" src={service.image} style={{width:"100%",height:"150px"}} />
                 <Card.Body>
                 <Card.Title>{service.name}</Card.Title>
@@ -33,11 +33,11 @@ function Cards(props) {
     </div>
     :
     <div>
-        <Row xs={1} sm={1} md={3} className="g-4">
+        <Row xs={1} sm={1} md={2} className="g-4">
         {props.data.map((course, pos) => (
             <Col key={pos}>
-            <Card className="shadow p-3 mb-5 bg-body-tertiary rounded" style={{width:"320px", height:"520px", marginLeft:"5%"}}>
-                <div class="ribbon ribbon-top-left"><span>{course.numberOfClasses}</span></div>
+            <Card className="shadow p-3 mb-5 bg-body-tertiary rounded" style={{width:"300px", height:"520px", marginLeft:"5%"}}>
+                <div className="ribbon ribbon-top-left"><span>{course.numberOfClasses}</span></div>
                 <Card.Img variant="top" src={course.image} style={{width:"100%",height:"150px"}} />
                 <Card.Body>
                 <Card.Title>{course.name}</Card.Title>

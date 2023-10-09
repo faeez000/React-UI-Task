@@ -1,50 +1,41 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route,} from 'react-router-dom'
 import TopNavbar from './Compoents/Navbar';
 import TopBodySection from './Compoents/TopBodySection';
-import { useEffect } from 'react';
 import MiddleBodySection from './Compoents/MiddleBodySection';
 import BottomBodySection from './Compoents/BottomBodySection';
 import Footer from './Compoents/Footer';
-
+import RegistrationPage from './Compoents/RegistrationPage';
 
 function App() {
 
-  const showData = (data)=>{
-    console.log(data.services)
-  }
-  useEffect(()=>{
-    fetch("Data.json",{
-      headers:{
-        'Content-Type':'application/json',
-        'Accept':'application/json'
-      }
-    })
-    .then((response) =>{ 
-      return response.json()
-    })
-    .then(data => showData(data))
-  })
+return (
+    <BrowserRouter >
+      <Routes>
+          <Route exact path='/' element={
+            <>
+              <div><TopNavbar /></div>
+              <div>
+              <TopBodySection />
+              </div>
+              <div>
+                <MiddleBodySection />
+              </div>
+              <div>
+                <BottomBodySection />
+              </div>
+              <div>
+                <Footer />
+              </div>
+            </>
+          }></Route>
+          
+          <Route exact path='/registration' element={<RegistrationPage />}></Route>
 
-  return (
-    <div className="App">
-      <div>
-        <TopNavbar />
-      </div>
-      <div>
-        <TopBodySection />
-      </div>
-      <div>
-        <MiddleBodySection />
-      </div>
-      <div>
-        <BottomBodySection />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      </Routes>
       
-    </div>
+    </BrowserRouter>
   );
 }
 
